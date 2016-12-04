@@ -1,0 +1,61 @@
+body {
+	background-image: url("../images/phanr-cpbym-wil-stewart.jpg");
+	background-size: cover;
+	background-position: center;
+	font-family: 'Lato', sans-serif;
+}
+
+html {
+	height: 100%;
+}
+
+.content {
+	text-align: center;
+	padding-top: 15%;
+	color: white;
+	text-shadow: 0px 4px 7px black;
+}
+
+.content h1 {
+	font-size: 4em;
+}
+
+.content p {
+	font-size: 1.1em;
+	font-weight: 100px;
+}
+
+.content a {
+	text-shadow: none;
+}
+
+.navbar-inverse {
+	background-color: transparent;
+    border-color: transparent; 
+}
+
+.navbar-inverse .navbar-brand {
+	color: #FFF;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	color: #FFF;
+}
+
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover {
+	border-bottom: 1px solid #1abc9c;
+}
+
+.btn-group-lg>.btn, .btn-lg {
+	border-radius: 0px;
+}
+
+.btn-primary {
+	background-color: #1abc9c;
+	border-color: #16a085;
+}
+
+.btn-primary:hover {
+	background-color: #16a085;
+	border-color: #16a085;
+}
