@@ -10,7 +10,8 @@ app.use(express.static("public"));
 
 var gallerySchema = new mongoose.Schema({
 	nama: String,
-	img: String
+	img: String,
+	description: String,
 });
 
 var gallery = mongoose.model("gallery", gallerySchema);
@@ -52,8 +53,21 @@ app.get("/gallery", function(req, res){
 			res.render("gallery", {data : data});
 		}
 	});
+});
 
-	
+app.get("/gallery/:id", function(req, res){
+	var id = req.params.id;
+
+	gallery.findById(id, function(err, data){
+		if (err) {
+			console.log("error when showing the data by id");
+			console.log(err);
+		}else{
+			console.log("success when showing the data by id");
+			console.log(data);
+			res.render("gallery_info", {data : data});
+		}
+	});
 });
 
 app.get("/gallery/new", function(req, res){
@@ -63,11 +77,13 @@ app.get("/gallery/new", function(req, res){
 app.post("/gallery", function(req, res){
 	var name = req.body.name;
 	var img = req.body.img;
+	var description = req.body.description;
 	// var dataPush = {nama: name, img: img};
 
 	gallery.create({
 		nama: name,
-		img: img
+		img: img,
+		description: description,
 	}, function(err, success){
 		if (err) {
 			console.log("error when submit new data");

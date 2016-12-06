@@ -9,9 +9,12 @@
 		<div class="row">
 			<% data.forEach(function(gallery){ %>
 				<div class="col-lg-4 col-md-6 col-sm-12">
-					<div class="thumbnail">
+					<div class="thumbnail text-center">
 						<img src="<%= gallery.img %>">
-						<h4 class="text-center"><%= gallery.nama %></h4>
+						<h4><%= gallery.nama %></h4>
+						<div class="form-group">
+							<a class="btn btn-default" href="/gallery/<%= gallery._id %>"><i class="fa fa-address-card-o" aria-hidden="true"></i> Info</a>
+						</div>
 					</div>
 				</div>
 			<% }) %>
